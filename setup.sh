@@ -5,9 +5,10 @@ SCRIPT_PATH=$(realpath $0)
 BASEDIR=$(dirname $SCRIPT_PATH)
 
 SHELL_CONFIG_FILE=$HOME/.bashrc
-USER_SHELL=$(getent passwd $USER | cut -d: -f7)
+USER_NAME=$(whoami)
+USER_SHELL=$(getent passwd $USER_NAME | cut -d: -f7)
 # Check the default shell of user
-if [ $USER_SHELL = /bin/zsh ]; then
+if [ "$USER_SHELL" = /bin/zsh ]; then
 	SHELL_CONFIG_FILE=$HOME/.zshrc
 fi
 
@@ -70,13 +71,13 @@ mkdir -p $HOME/.config/nvim/
 
 echo "Linking the init.lua file to $HOME/.config/nvim/init.lua...\n"
 ln -sf $BASEDIR/init.lua $HOME/.config/nvim/init.lua
-ln -sf $BASEDIR/lua $HOME/.config/nvim/lua
+ln -s $BASEDIR/lua $HOME/.config/nvim/lua
 
 echo "Installing the plugins...\n"
 
 echo $NEOVIM_BINARY
 
-$NEOVIM_BINARY --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+$NEOVIM_BINARY --headless -c 'autocmd User PackerComplete quitall' -c ''
 
 echo "Done!"
 echo "Now reload or $SHELL_CONFIG_FILE with the command below:"
