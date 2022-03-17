@@ -1,0 +1,3 @@
+#!/bin/bash
+# kitty -- nvr --severname neovim-remote $@
+kitty -- nvim $@
