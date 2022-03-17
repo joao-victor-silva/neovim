@@ -4,6 +4,8 @@ if not status_ok then
   return
 end
 
+telescope.load_extension('fzf')
+
 telescope.setup {
   defaults = {
     mappings = {
@@ -13,6 +15,11 @@ telescope.setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      find_command = { 'rg', '--ignore', '-L', '--hidden', '--files' }
+    }
+  }
 }
 
 local opts = { noremap = true, silent = true }

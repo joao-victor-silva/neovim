@@ -39,7 +39,7 @@ if [ $(arch) = "x86_64" ]; then
 	# check if neovim are not in PATH environment variable
 	if ! [ -x "$(command -v nvim)" ]; then
 		echo "Adding neovim to the PATH...\n"
-		echo "export \"PATH=\$PATH:$DOWNLOAD_PATH/nvim-linux64/bin\"" >> $SHELL_CONFIG_FILE
+		echo "export PATH=\"\$PATH:$DOWNLOAD_PATH/nvim-linux64/bin\"" >> $SHELL_CONFIG_FILE
 		NEOVIM_BINARY="$DOWNLOAD_PATH/nvim-linux64/bin/nvim"
 	else
 		NEOVIM_BINARY="$(which nvim)"

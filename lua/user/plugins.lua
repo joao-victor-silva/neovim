@@ -52,6 +52,7 @@ return packer.startup(function(use)
 
   -- Fuzzy finder in almost everything
   use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Add indentation guides even on blank lines
   use 'lukas-reineke/indent-blankline.nvim'
