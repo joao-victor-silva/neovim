@@ -82,6 +82,7 @@ return packer.startup(function(use)
 
   -- Debug
   use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-dap.nvim'
 
   -- Tagbar with LSP
   use 'liuchengxu/vista.vim'
