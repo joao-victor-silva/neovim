@@ -55,9 +55,9 @@ vim.api.nvim_exec(
 -- inoremap ( ()<esc>li
 -- inoremap { {}<esc>li
 -- inoremap [ []<esc>li
-vim.api.nvim_set_keymap('i', '(', '()<esc>i', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '{', '{}<esc>i', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '[', '[]<esc>i', { noremap = true, silent = true })
+vim.keymap.set('i', '(', '()<esc>i', { silent = true })
+vim.keymap.set('i', '{', '{}<esc>i', { silent = true })
+vim.keymap.set('i', '[', '[]<esc>i', { silent = true })
 
 -- During a search and replace (:%s/something/new_something/g), show the result preview
 -- set inccommand=split (default)
