@@ -29,7 +29,7 @@ if [ $(arch) = "x86_64" ]; then
 
 	mkdir -p $DOWNLOAD_PATH
 
-	echo "curl -fSL https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.tar.gz\n" 
+	echo "curl -fSL https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.tar.gz\n"
 	echo "\t -o $DOWNLOAD_PATH/nvim-linux64.tar.gz"
 	curl -fSL https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.tar.gz \
 		-o $DOWNLOAD_PATH/nvim-linux64.tar.gz
@@ -71,13 +71,13 @@ mkdir -p $HOME/.config/nvim/
 
 echo "Linking the init.lua file to $HOME/.config/nvim/init.lua...\n"
 ln -sf $BASEDIR/init.lua $HOME/.config/nvim/init.lua
-ln -s $BASEDIR/lua $HOME/.config/nvim/lua
+ln -sf $BASEDIR/lua $HOME/.config/nvim/lua
 
 echo "Installing the plugins...\n"
 
 echo $NEOVIM_BINARY
 
-$NEOVIM_BINARY --headless -c 'autocmd User PackerComplete quitall' -c ''
+# $NEOVIM_BINARY --headless -c 'autocmd User PackerComplete quitall' -c ''
 
 echo "Done!"
 echo "Now reload or $SHELL_CONFIG_FILE with the command below:"
