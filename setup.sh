@@ -8,7 +8,7 @@ SHELL_CONFIG_FILE=$HOME/.bashrc
 USER_NAME=$(whoami)
 USER_SHELL=$(getent passwd $USER_NAME | cut -d: -f7)
 # Check the default shell of user
-if [ "$USER_SHELL" = /bin/zsh ]; then
+if [[ "$USER_SHELL" == *"/bin/zsh"* ]]; then
 	SHELL_CONFIG_FILE=$HOME/.zshrc
 fi
 
