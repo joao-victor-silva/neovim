@@ -48,7 +48,6 @@ return packer.startup(function(use)
 
   -- A git tool kit for vim
   use 'sindrets/diffview.nvim'
-  use 'TimUntersberger/neogit'
 
   -- Fuzzy finder in almost everything
   use 'nvim-telescope/telescope.nvim'
