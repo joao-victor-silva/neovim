@@ -46,9 +46,6 @@ return packer.startup(function(use)
   -- Basic plugins to do surround code
   use 'tpope/vim-surround'
 
-  -- A git tool kit for vim
-  use 'sindrets/diffview.nvim'
-
   -- Fuzzy finder in almost everything
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
