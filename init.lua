@@ -10,5 +10,6 @@ require 'user.telescope'
 require 'user.gitsigns'
 require 'user.neogit'
 require 'user.indent_blankline'
+require 'user.nvim-tree'
 
 -- vim: ts=2 sts=2 sw=2 et
