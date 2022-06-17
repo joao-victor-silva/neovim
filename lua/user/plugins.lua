@@ -58,7 +58,6 @@ return packer.startup(function(use)
 
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -73,6 +72,10 @@ return packer.startup(function(use)
   -- Collection of configurations for built-in LSP client
   use 'neovim/nvim-lspconfig'
 
+  -- Collection of configurations for linters and formaters
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  -- Icons and file tree view
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 

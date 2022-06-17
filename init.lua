@@ -11,5 +11,6 @@ require 'user.gitsigns'
 require 'user.indent_blankline'
 require 'user.toggleterm'
 require 'user.nvim-tree'
+require 'user.null-ls'
 
 -- vim: ts=2 sts=2 sw=2 et
