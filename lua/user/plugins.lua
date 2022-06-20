@@ -41,11 +41,11 @@ return packer.startup(function(use)
     -- "gc" to comment visual regions/lines
     use("numToStr/Comment.nvim")
 
+    -- Better color scheme
+    use("marko-cerovac/material.nvim")
+
     -- Better statusline
     use("nvim-lualine/lualine.nvim")
-
-    -- Better color scheme
-    use("dracula/vim")
 
     -- Basic plugins to do surround code
     use("tpope/vim-surround")
