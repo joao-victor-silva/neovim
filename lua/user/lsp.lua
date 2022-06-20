@@ -63,6 +63,16 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+local globals = { "vim", "use" }
+local library = vim.api.nvim_get_runtime_file("", true)
+
+-- AwesomeWM specific
+table.insert(library, "/usr/share/awesome/lib")
+table.insert(globals, "awesome")
+table.insert(globals, "client")
+table.insert(globals, "root")
+table.insert(globals, "screen")
+
 lspconfig.sumneko_lua.setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -76,20 +86,11 @@ lspconfig.sumneko_lua.setup({
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
-                globals = {
-                    "vim",
-                    "use",
-                    "awesome",
-                    "client",
-                    "root",
-                },
+                globals = globals,
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = {
-                    vim.api.nvim_get_runtime_file("", true),
-                    ["/usr/share/awesome/lib"] = true,
-                },
+                library = library,
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
