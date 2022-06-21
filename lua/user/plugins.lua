@@ -30,14 +30,13 @@ if not status_ok then
 end
 
 -- Have packer use a popup window
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
-}
-
+packer.init({
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "rounded" })
+        end,
+    },
+})
 
 -- Install your plugins here
 return packer.startup(function(use)
@@ -93,6 +92,7 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-web-devicons")
     use("kyazdani42/nvim-tree.lua")
 
+
     -- Debug
     use("mfussenegger/nvim-dap")
     use("nvim-telescope/telescope-dap.nvim")
@@ -102,6 +102,10 @@ return packer.startup(function(use)
 
     -- use 'rafcamlet/nvim-luapad'
     use("akinsho/toggleterm.nvim")
+
+    -- Haxe/Fixel related plugins
+    use("jdonaldson/vaxe")
+    use("quangnguyen30192/cmp-nvim-tags")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -32,6 +32,11 @@ vim.opt.colorcolumn = "80"
 -- Change the visual of character like trim white spaces and tabs
 vim.opt.list = true
 
+-- Set zsh as default shell
+vim.opt.shell = '/usr/bin/zsh'
+
+vim.opt.tags = 'tags'
+
 -- Code folding
 -- Use za: Toggle code folding.
 -- zR: Open all folds.

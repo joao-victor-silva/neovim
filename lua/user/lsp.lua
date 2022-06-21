@@ -99,3 +99,15 @@ lspconfig.sumneko_lua.setup({
         },
     },
 })
+
+local util = require("lspconfig.util")
+
+lspconfig.haxe_language_server.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "node", os.getenv("HOME") .. "/Tools/haxe-language-server/bin/server.js" },
+    root_dir = util.root_pattern("*.hxml", "*.xml"),
+    init_options = {
+	    displayArguments = { "Project.xml", "build.xml" },
+    }
+})

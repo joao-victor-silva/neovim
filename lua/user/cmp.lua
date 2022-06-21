@@ -10,6 +10,12 @@ if not snip_status_ok then
     return
 end
 
+local ctags_status_ok, ctags = pcall(require, "cmp_nvim_tags")
+if not snip_status_ok then
+    vim.notify("ctags not found")
+    return
+end
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -49,5 +55,6 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "tags" },
     },
 })
