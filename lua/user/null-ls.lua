@@ -7,9 +7,10 @@ end
 null_ls.setup({
     debug = false,
     sources = {
-        null_ls.builtins.formatting.stylua,
         null_ls.builtins.diagnostics.luacheck,
+        null_ls.builtins.formatting.stylua,
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.formatting.blue,
     },
 })

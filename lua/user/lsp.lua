@@ -16,8 +16,12 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
+local disable_format = {}
+disable_format["sumneko_lua"] = true
+disable_format["pylsp"] = true
+
 local on_attach = function(client, bufnr)
-    if client.name == "sumneko_lua" then
+    if disable_format[client.name] then
         client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
     end
 
