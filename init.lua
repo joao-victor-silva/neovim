@@ -13,6 +13,3 @@ require("user.indent_blankline")
 require("user.toggleterm")
 require("user.nvim-tree")
 require("user.null-ls")
-
--- Remove this line
-require("colorizer").setup()
