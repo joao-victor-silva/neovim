@@ -85,13 +85,15 @@ return packer.startup(function(use)
     -- Collection of configurations for built-in LSP client
     use("neovim/nvim-lspconfig")
 
+    -- Collection of lsp installers
+    use("williamboman/nvim-lsp-installer")
+
     -- Collection of configurations for linters and formaters
     use("jose-elias-alvarez/null-ls.nvim")
 
     -- Icons and file tree view
     use("kyazdani42/nvim-web-devicons")
     use("kyazdani42/nvim-tree.lua")
-
 
     -- Debug
     use("mfussenegger/nvim-dap")
