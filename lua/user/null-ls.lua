@@ -13,6 +13,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.blue,
         null_ls.builtins.diagnostics.gitlint.with({ extra_args = { "--contrib=CT1" }}),
+        null_ls.builtins.diagnostics.cspell,
         null_ls.builtins.diagnostics.codespell,
         null_ls.builtins.diagnostics.misspell,
     },
