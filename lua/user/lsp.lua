@@ -53,7 +53,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { "clangd", "rust_analyzer", "gopls", "golangci_lint_ls", "pylsp", "bashls" }
+local servers = { "clangd", "rust_analyzer", "gopls", "golangci_lint_ls", "pylsp", "bashls", "gdscript", "rnix" }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = on_attach,
@@ -112,6 +112,10 @@ lspconfig.haxe_language_server.setup({
     cmd = { "node", os.getenv("HOME") .. "/Tools/haxe-language-server/bin/server.js" },
     root_dir = util.root_pattern("*.hxml", "*.xml"),
     init_options = {
-	    displayArguments = { "Project.xml", "build.xml" },
-    }
+        displayArguments = {
+            "Project.xml",
+            "--cwd " .. os.getenv("HOME") .. "/Projects/breakout",
+            "build.xml",
+        },
+    },
 })

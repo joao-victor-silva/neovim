@@ -20,7 +20,7 @@ vim.opt.mouse = "a"
 -- Show in bottom right conner the command that you use
 vim.opt.showcmd = true
 
--- Chane the color of open and close brackets and other similar
+-- Change the color of open and close brackets and other similar
 vim.opt.showmatch = true
 
 -- High light the current line to make easy to see
@@ -33,9 +33,9 @@ vim.opt.colorcolumn = "80"
 vim.opt.list = true
 
 -- Set zsh as default shell
-vim.opt.shell = '/usr/bin/zsh'
+vim.opt.shell = "/usr/bin/zsh"
 
-vim.opt.tags = 'tags'
+vim.opt.tags = "tags"
 
 -- Code folding
 -- Use za: Toggle code folding.
@@ -74,7 +74,7 @@ vim.keymap.set("i", "[", "[]<esc>i", { silent = true })
 -- code
 --
 -- Set font in GUI mode (neovide)
-vim.opt.guifont = "Jetbrains Mono Nerd Font 12"
+vim.opt.guifont = "JetBrains Mono Nerd Font 12"
 
 -- Copy and Paste to/from system clipboard
 --

@@ -15,6 +15,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.gitlint.with({ extra_args = { "--contrib=CT1" }}),
         null_ls.builtins.diagnostics.cspell,
         null_ls.builtins.diagnostics.codespell,
-        null_ls.builtins.diagnostics.misspell,
+        -- null_ls.builtins.diagnostics.misspell,
+        null_ls.builtins.formatting.alejandra,
     },
 })
