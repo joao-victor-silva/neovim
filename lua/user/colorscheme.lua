@@ -1,6 +1,6 @@
-local material_status_ok, _ = pcall(require, "material")
-if not material_status_ok then
-    vim.notify("material not found")
+local catppuccin_status_ok, _ = pcall(require, "catppuccin")
+if not catppuccin_status_ok then
+    vim.notify("catppuccin not found")
     return
 end
 
@@ -10,22 +10,23 @@ if not lualine_status_ok then
     return
 end
 
-vim.g.material_style = "deep ocean"
+local colorizer_status_ok, colorizer = pcall(require, "colorizer")
+if not colorizer_status_ok then
+    vim.notify("colorizer not found")
+    return
+end
 
-vim.cmd([[
-try
-  colorscheme material
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]])
+vim.g.catppuccin_flavour = "mocha"
+
+vim.cmd([[colorscheme catppuccin]])
 
 lualine.setup({
     options = {
-        icons_enabled = false,
-        theme = "material",
+        theme = "catppuccin",
+        icons_enabled = true,
         component_separators = "|",
         section_separators = "",
     },
 })
+
+colorizer.setup()

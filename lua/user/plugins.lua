@@ -14,7 +14,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.cmd([[packadd packer.nvim]])
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Auto-command that reloads neovim whenever you save the plugins.lua file
 local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "plugins.lua",
@@ -51,7 +51,7 @@ return packer.startup(function(use)
     use("numToStr/Comment.nvim")
 
     -- Better color scheme
-    use("marko-cerovac/material.nvim")
+    use("catppuccin/nvim")
 
     -- Better statusline
     use("nvim-lualine/lualine.nvim")
@@ -88,7 +88,7 @@ return packer.startup(function(use)
     -- Collection of lsp installers
     use("williamboman/nvim-lsp-installer")
 
-    -- Collection of configurations for linters and formaters
+    -- Collection of configurations for linters and formatters
     use("jose-elias-alvarez/null-ls.nvim")
 
     -- Icons and file tree view
@@ -99,13 +99,16 @@ return packer.startup(function(use)
     use("mfussenegger/nvim-dap")
     use("nvim-telescope/telescope-dap.nvim")
 
-    -- Tagbar with LSP
+    -- Tag-bar with LSP
     use("liuchengxu/vista.vim")
 
     -- use 'rafcamlet/nvim-luapad'
     use("akinsho/toggleterm.nvim")
 
-    -- Haxe/Fixel related plugins
+    -- Color on hex-codes
+    use("norcalli/nvim-colorizer.lua")
+
+    -- Haxe/Flixel related plugins
     use("jdonaldson/vaxe")
     use("quangnguyen30192/cmp-nvim-tags")
 
