@@ -88,4 +88,4 @@ luacheck
 mypy
 gitlint
 codespell
-
+pkgs
