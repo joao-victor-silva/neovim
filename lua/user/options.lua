@@ -33,7 +33,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.list = true
 
 -- Set zsh as default shell
-vim.opt.shell = "/usr/bin/zsh"
+vim.opt.shell = "zsh"
 
 vim.opt.tags = "tags"
 
