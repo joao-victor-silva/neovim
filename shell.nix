@@ -5,6 +5,9 @@ pkgs.mkShell {
     pkgs.sumneko-lua-language-server
     pkgs.lua.pkgs.luacheck
     pkgs.stylua
+    pkgs.gitlint
+    pkgs.codespell
+    pkgs.nodePackages.cspell
     pkgs.gh
   ];
 
