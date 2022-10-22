@@ -60,8 +60,7 @@ return packer.startup(function(use)
     use("tpope/vim-surround")
 
     -- Fuzzy finder in almost everything
-    use("nvim-telescope/telescope.nvim")
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
     -- Add indentation guides even on blank lines
     use("lukas-reineke/indent-blankline.nvim")
@@ -72,7 +71,7 @@ return packer.startup(function(use)
     -- Highlight, edit, and navigate code using a fast incremental parsing library
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     -- Additional textobjects for treesitter
-    use("nvim-treesitter/nvim-treesitter-textobjects")
+    -- use("nvim-treesitter/nvim-treesitter-textobjects")
 
     -- Autocompletion plugins
     use("hrsh7th/nvim-cmp")
@@ -96,8 +95,8 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-tree.lua")
 
     -- Debug
-    use("mfussenegger/nvim-dap")
-    use("nvim-telescope/telescope-dap.nvim")
+    -- use("mfussenegger/nvim-dap")
+    -- use("nvim-telescope/telescope-dap.nvim")
 
     -- Tag-bar with LSP
     use("liuchengxu/vista.vim")

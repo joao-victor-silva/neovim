@@ -1,11 +1,7 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-    vim.notify("telescope not found")
     return
 end
-
-telescope.load_extension("fzf")
-telescope.load_extension("dap")
 
 telescope.setup({
     defaults = {
@@ -22,6 +18,9 @@ telescope.setup({
         },
     },
 })
+
+-- telescope.load_extension("fzf")
+-- telescope.load_extension("dap")
 
 -- nnoremap <leader>gc <cmd>Telescope git_commits<cr>
 -- nnoremap <leader>gb <cmd>Telescope git_branches<cr>
