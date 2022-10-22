@@ -1,12 +1,10 @@
 local lsp_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lsp_status_ok then
-    vim.notify("lspconfig not found")
     return
 end
 
 local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_status_ok then
-    vim.notify("cmp_nvim_lsp not found")
     return
 end
 

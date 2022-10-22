@@ -25,7 +25,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-    vim.notify("packer not found")
     return
 end
 

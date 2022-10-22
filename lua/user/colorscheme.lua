@@ -1,18 +1,15 @@
 local catppuccin_status_ok, catppuccin = pcall(require, "catppuccin")
 if not catppuccin_status_ok then
-    vim.notify("catppuccin not found")
     return
 end
 
 local lualine_status_ok, lualine = pcall(require, "lualine")
 if not lualine_status_ok then
-    vim.notify("lualine not found")
     return
 end
 
 local colorizer_status_ok, colorizer = pcall(require, "colorizer")
 if not colorizer_status_ok then
-    vim.notify("colorizer not found")
     return
 end
 
