@@ -1,4 +1,4 @@
-local catppuccin_status_ok, _ = pcall(require, "catppuccin")
+local catppuccin_status_ok, catppuccin = pcall(require, "catppuccin")
 if not catppuccin_status_ok then
     vim.notify("catppuccin not found")
     return
@@ -18,7 +18,11 @@ end
 
 vim.g.catppuccin_flavour = "mocha"
 
-vim.cmd([[colorscheme catppuccin]])
+-- vim.cmd([[colorscheme catppuccin]])
+
+catppuccin.setup({
+    flavour = "mocha"
+})
 
 lualine.setup({
     options = {
