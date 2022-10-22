@@ -22,7 +22,7 @@ disable_format["pylsp"] = true
 
 local on_attach = function(client, bufnr)
     if disable_format[client.name] then
-        client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
+        client.server_capabilities.documentFormattingProvider = false
     end
 
     local opts = { buffer = bufnr }
@@ -42,8 +42,9 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     -- vim.keymap.set('v', '<leader>ca', vim.lsp.buf.range_code_action, opts)
     vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, opts)
-    vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
+    vim.keymap.set("n", "<leader>f", function()
+        vim.lsp.buf.format({ async = true })
+    end, opts)
 
     -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
