@@ -49,8 +49,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- nvim-cmp supports additional completion capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Enable the following language servers
 local servers = { "clangd", "rust_analyzer", "gopls", "pylsp", "bashls", "gdscript", "rnix" }
