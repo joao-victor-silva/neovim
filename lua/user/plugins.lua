@@ -68,7 +68,7 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim")
 
     -- Highlight, edit, and navigate code using a fast incremental parsing library
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/nvim-treesitter")
     -- Additional textobjects for treesitter
     -- use("nvim-treesitter/nvim-treesitter-textobjects")
 
