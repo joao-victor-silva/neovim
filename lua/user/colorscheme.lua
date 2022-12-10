@@ -13,9 +13,9 @@ if not colorizer_status_ok then
     return
 end
 
-vim.g.catppuccin_flavour = "mocha"
+-- vim.g.catppuccin_flavour = "mocha"
 
--- vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme catppuccin]])
 
 catppuccin.setup({
     flavour = "mocha"
