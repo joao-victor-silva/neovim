@@ -50,8 +50,23 @@ end
 -- nvim-cmp supports additional completion capabilities
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+
 -- Enable the following language servers
-local servers = { "clangd", "rust_analyzer", "gopls", "pylsp", "bashls", "gdscript", "rnix" }
+local LANGUAGE_SERVER = os.getenv("LANGUAGE_SERVER") or ""
+local split = function(text, sep)
+    local separator, fields = sep or ":", {}
+    local pattern = string.format("([^%s]+)", separator)
+    text:gsub(pattern, function(c)
+        fields[#fields + 1] = c
+    end)
+    return fields
+end
+
+local servers = {}
+for _, server in ipairs(split(LANGUAGE_SERVER)) do
+    table.insert(servers, server)
+end
+
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = on_attach,
