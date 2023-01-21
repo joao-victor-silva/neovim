@@ -8,6 +8,11 @@ if not cmp_status_ok then
     return
 end
 
+local flutter_status_ok, flutter_tools = pcall(require, "flutter-tools")
+if not flutter_status_ok then
+    return
+end
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
@@ -49,7 +54,6 @@ end
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = cmp_nvim_lsp.default_capabilities()
-
 
 -- Enable the following language servers
 local LANGUAGE_SERVER = os.getenv("LANGUAGE_SERVER") or ""
@@ -130,5 +134,12 @@ lspconfig.haxe_language_server.setup({
             "--cwd " .. os.getenv("HOME") .. "/Projects/breakout",
             "build.xml",
         },
+    },
+})
+
+flutter_tools.setup({
+    lsp = {
+        on_attach = on_attach,
+        capabilities = capabilities,
     },
 })

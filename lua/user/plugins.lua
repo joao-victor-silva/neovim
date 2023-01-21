@@ -110,6 +110,9 @@ return packer.startup(function(use)
     use("jdonaldson/vaxe")
     use("quangnguyen30192/cmp-nvim-tags")
 
+    -- Flutter related plugins
+    use("akinsho/flutter-tools.nvim")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
