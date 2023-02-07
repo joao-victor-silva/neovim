@@ -112,6 +112,8 @@ return packer.startup(function(use)
 
     -- Flutter related plugins
     use("akinsho/flutter-tools.nvim")
+    -- tabnine
+    use({"codota/tabnine-nvim", run = "./dl_binaries.sh"})
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
